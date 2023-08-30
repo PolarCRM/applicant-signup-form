@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AIESEC Application Form</title>
+        <link rel="stylesheet" href="./styles.css"/>
+    </head>
+    <body>
+        <header className="App-header">
+            <h2>Mitgliedschaft Registrierung</h2>
+            <p class="description">
+                Bewirb dich ganz unkompliziert, indem du folgendes Formular ausfüllst
+                und wir nehmen Kontakt mit dir auf. Durch das Absenden dieses Formulars
+                bestätigst du, dass wir deine Daten im Rahmen des Datenschutzgesetzes und
+                unserer&nbsp;
+                    <a
+                        class="app-link"
+                        href="https://www.aiesec.de/datenschutz"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Datenschutzerklärung
+                    </a>
+                &nbsp;verarbeiten.
+            </p>
+            <form action="http://localhost:8000/applicants/new" method="post">
+                <fieldset>
+                    <label class="question-label">Lokalkomitee in deiner Nähe *
+                        <select id="lc" required>
+                            <option value="">Bitte wähle ein Komitee aus</option>
+                        </select>
+                    </label>
+                    <label class="question-label">Vorname * <input type="text" name="first-name" required/></label>
+                    <label class="question-label">Nachname * <input type="text" name="last-name" required/></label>
+                    <label class="question-label">Email * <input type="email" name="email" required/></label>
+                    <label class="question-label">Telefonnummer * <input type="text" name="tel-nr" required/></label>
+                    <label class="question-label">
+                        Was machst du derzeit?
+                        Falls du Student bist, an welcher Hochschule studierst du?
+                        Wie heißt dein Studiengang? *
+                        <input type="text" name="curr-occupation" required/>
+                    </label>
+
+                    <label class="question-label">Auf welchem Niveau sprichst du Deutsch? *
+                    <select id="lang-lvl" required>
+                        <option value="">Bitte wähle eine Option aus</option>
+                    </select>
+                    </label>
+
+                    <label class="question-label">
+                        Wie bist du auf AIESEC aufmerksam geworden? *
+                        <select id="mkt-action" required>
+                            <option value="">Bitte wähle eine Option aus</option>
+                        </select>
+                    </label>
+
+                    <label class="question-label">
+                        Was ist deine Motivation, dich bei AIESEC zu engagieren?
+                    </label>
+
+                    <label class="checkbox-label"><input type="checkbox" name="reason-exp" class="inline"/>Praktische Erfahrung</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-network" class="inline"/>Globales Netzwerk</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-social" class="inline"/>Soziale Verantwortung</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-internat" class="inline"/>Internationale Atmosphäre</label>
+
+                    <label class="question-label">Datenschutz *</label>
+                    <label class="checkbox-label"><input type="checkbox" name="data-security" class="inline" required/>
+                        Ich stimme den Datenschutzbestimmungen von AIESEC,
+                        abrufbar unter&nbsp;
+                        <a
+                            class="app-link"
+                            href="https://www.aiesec.de/datenschutz"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            www.aiesec.de/datenschutz
+                        </a>
+                        &nbsp;zu.
+                    </label>
+
+                    <label class="question-label">Einwilligung zur Kontaktaufnahme *</label>
+                    <label class="checkbox-label">
+                        <input class="inline" type="checkbox" name="contacting-allowed" required/>
+                        AIESEC darf mich zum Zwecke meiner Bewerbung telefonisch,
+                        via Messenger oder per E-Mail kontaktieren.
+                    </label>
+
+                    <label class="question-label">Falls du ein LinkedIn Profil hast, gib uns gerne den Link:</label>
+                    <input type="text" name="linkedin"/>
+
+                    <p class="question-label">oder</p>
+
+                    <label class="question-label">Lade einen Lebenslauf hoch</label>
+                    <input type="file" name="file"/>
+
+                    <input type="submit" value="Senden" />
+                </fieldset>
+            </form>
+        </header>
+        <script src="script.js"></script>
+    </body>
+</html>
