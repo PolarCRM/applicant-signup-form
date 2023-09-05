@@ -87,3 +87,30 @@ mktOpt.map((opt, index) => {
     new_option.value = index
     mktDropdown.add(new_option)
 })
+
+function handleSubmit(event) {
+  // Overwrites the submit function of the button to convert formData into JSON before sending to server
+  event.preventDefault();
+  const checkboxes = ["reason-exp", "reason-network", "reason-social", "reason-internat"]
+  const data = new FormData(event.target);
+  let value = Object.fromEntries(data.entries())
+  value.topics = data.getAll("topics")
+  value.dataSec = Boolean(value.dataSec).toString()
+  value.contactingAllowed = Boolean(value.contactingAllowed).toString()
+  
+  value.motivation = []
+  checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
+  [...checkboxes, "topics"].forEach(n => delete value[n])
+
+  fetch('http://localhost:8000/applicants/new', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(value)
+  })
+  .then(response => response.json())
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);

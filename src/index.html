@@ -22,33 +22,33 @@
                     </a>
                 &nbsp;verarbeiten.
             </p>
-            <form action="http://localhost:8000/applicants/new" method="post">
+            <form action="http://localhost:8000/applicants/new" method="post" enctype="application/x-www-form-urlencoded">
                 <fieldset>
                     <label class="question-label">Lokalkomitee in deiner Nähe *
-                        <select id="lc" required>
+                        <select name="lc" id="lc" required>
                             <option value="">Bitte wähle ein Komitee aus</option>
                         </select>
                     </label>
-                    <label class="question-label">Vorname * <input type="text" name="first-name" required/></label>
-                    <label class="question-label">Nachname * <input type="text" name="last-name" required/></label>
+                    <label class="question-label">Vorname * <input type="text" name="firstName" required/></label>
+                    <label class="question-label">Nachname * <input type="text" name="familyName" required/></label>
                     <label class="question-label">Email * <input type="email" name="email" required/></label>
-                    <label class="question-label">Telefonnummer * <input type="text" name="tel-nr" required/></label>
+                    <label class="question-label">Telefonnummer * <input type="text" name="telephone" required/></label>
                     <label class="question-label">
                         Was machst du derzeit?
                         Falls du Student bist, an welcher Hochschule studierst du?
                         Wie heißt dein Studiengang? *
-                        <input type="text" name="curr-occupation" required/>
+                        <input type="text" name="occupation" required/>
                     </label>
 
                     <label class="question-label">Auf welchem Niveau sprichst du Deutsch? *
-                    <select id="lang-lvl" required>
+                    <select name="german" id="lang-lvl" required>
                         <option value="">Bitte wähle eine Option aus</option>
                     </select>
                     </label>
 
                     <label class="question-label">
                         Wie bist du auf AIESEC aufmerksam geworden? *
-                        <select id="mkt-action" required>
+                        <select name="mktChannel" id="mkt-action" required>
                             <option value="">Bitte wähle eine Option aus</option>
                         </select>
                     </label>
@@ -57,13 +57,13 @@
                         Was ist deine Motivation, dich bei AIESEC zu engagieren?
                     </label>
 
-                    <label class="checkbox-label"><input type="checkbox" name="reason-exp" class="inline"/>Praktische Erfahrung</label>
-                    <label class="checkbox-label"><input type="checkbox" name="reason-network" class="inline"/>Globales Netzwerk</label>
-                    <label class="checkbox-label"><input type="checkbox" name="reason-social" class="inline"/>Soziale Verantwortung</label>
-                    <label class="checkbox-label"><input type="checkbox" name="reason-internat" class="inline"/>Internationale Atmosphäre</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-exp" value="true" class="inline"/>Praktische Erfahrung</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-network" value="true" class="inline"/>Globales Netzwerk</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-social" value="true" class="inline"/>Soziale Verantwortung</label>
+                    <label class="checkbox-label"><input type="checkbox" name="reason-internat" value="true" class="inline"/>Internationale Atmosphäre</label>
 
                     <label class="question-label">Datenschutz *</label>
-                    <label class="checkbox-label"><input type="checkbox" name="data-security" class="inline" required/>
+                    <label class="checkbox-label"><input type="checkbox" name="dataSecurity" value="true" class="inline" required/>
                         Ich stimme den Datenschutzbestimmungen von AIESEC,
                         abrufbar unter&nbsp;
                         <a
@@ -78,7 +78,7 @@
 
                     <label class="question-label">Einwilligung zur Kontaktaufnahme *</label>
                     <label class="checkbox-label">
-                        <input class="inline" type="checkbox" name="contacting-allowed" required/>
+                        <input class="inline" type="checkbox" value="true" name="contactingAllowed" required/>
                         AIESEC darf mich zum Zwecke meiner Bewerbung telefonisch,
                         via Messenger oder per E-Mail kontaktieren.
                     </label>
