@@ -65,26 +65,26 @@ const mktOpt = [
 ];
 
 let lcDropdown = document.getElementById("lc")
-LCs.map((opt, index) => {
+LCs.map((opt) => {
     let new_option = document.createElement("option")
     new_option.text = opt
-    new_option.value = index
+    new_option.value = opt
     lcDropdown.add(new_option)
 })
 
 let langDropdown = document.getElementById("lang-lvl")
-langOpt.map((opt, index) => {
+langOpt.map((opt) => {
     let new_option = document.createElement("option")
     new_option.text = opt
-    new_option.value = index
+    new_option.value = opt
     langDropdown.add(new_option)
 })
 
 let mktDropdown = document.getElementById("mkt-action")
-mktOpt.map((opt, index) => {
+mktOpt.map((opt) => {
     let new_option = document.createElement("option")
     new_option.text = opt
-    new_option.value = index
+    new_option.value = opt
     mktDropdown.add(new_option)
 })
 
@@ -95,8 +95,8 @@ function handleSubmit(event) {
   const data = new FormData(event.target);
   let value = Object.fromEntries(data.entries())
   value.topics = data.getAll("topics")
-  value.dataSec = Boolean(value.dataSec).toString()
-  value.contactingAllowed = Boolean(value.contactingAllowed).toString()
+  value.dataSecurity = Boolean(value.dataSecurity).toString()
+  value.contactAllowed = Boolean(value.contactAllowed).toString()
   
   value.motivation = []
   checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
