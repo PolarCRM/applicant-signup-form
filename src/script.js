@@ -91,7 +91,7 @@ mktOpt.map((opt) => {
 function handleSubmit(event) {
   // Overwrites the submit function of the button to convert formData into JSON before sending to server
   event.preventDefault();
-  const checkboxes = ["reason-exp", "reason-network", "reason-social", "reason-internat"]
+  const checkboxes = ["reason-exp", "reason-network", "reason-social"]
   const data = new FormData(event.target);
   let value = Object.fromEntries(data.entries())
   value.topics = data.getAll("topics")
