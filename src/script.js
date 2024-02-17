@@ -34,6 +34,42 @@ const LCs = [
     "Stuttgart & Hohenheim"
 ];
 
+const LcDB = [
+  "aachen",
+  "augsburg",
+  "berlin-hu",
+  "berlin-tu",
+  "bielefeld",
+  "bochum",
+  "bonn",
+  "braunschweig",
+  "bremen",
+  "darmstadt",
+  "dresden",
+  "duesseldorf",
+  "frankfurt-main",
+  "giessen-marburg",
+  "goettingen",
+  "halle",
+  "hamburg",
+  "hannover",
+  "kaiserslautern",
+  "karlsruhe",
+  "koeln",
+  "leipzig",
+  "lueneburg",
+  "magdeburg",
+  "mainz-wiesbaden",
+  "mannheim-heidelberg",
+  "muenchen",
+  "muenster",
+  "nuernberg",
+  "paderborn",
+  "passau",
+  "regensburg",
+  "stuttgart-hohenheim"
+];
+
 const langOpt = [
   "Gar nicht",
   "A1",
@@ -43,6 +79,17 @@ const langOpt = [
   "C1",
   "C2",
   "Muttersprache"
+];
+
+const langOptDB = [
+  "none",
+  "a1",
+  "a2",
+  "b1",
+  "b2",
+  "c1",
+  "c2",
+  "native"
 ];
 
 const mktOpt = [
@@ -64,43 +111,62 @@ const mktOpt = [
   "Anderes"
 ];
 
-let lcDropdown = document.getElementById("lc")
-LCs.map((opt) => {
-    let new_option = document.createElement("option")
-    new_option.text = opt
-    new_option.value = opt
-    lcDropdown.add(new_option)
-})
+const mktOptDB = [
+  "friend",
+  "infobooth",
+  "lecture",
+  "facebook",
+  "twitter",
+  "instagram",
+  "linkedin",
+  "studo",
+  "whatsapp",
+  "other-social",
+  "search-engine",
+  "event",
+  "email",
+  "media",
+  "blog",
+  "other"
+];
 
-let langDropdown = document.getElementById("lang-lvl")
-langOpt.map((opt) => {
-    let new_option = document.createElement("option")
-    new_option.text = opt
-    new_option.value = opt
-    langDropdown.add(new_option)
-})
+let lcDropdown = document.getElementById("lc");
+LCs.map((opt, idx) => {
+    let new_option = document.createElement("option");
+    new_option.text = opt;
+    new_option.value = LcDB[idx];
+    lcDropdown.add(new_option);
+});
 
-let mktDropdown = document.getElementById("mkt-action")
-mktOpt.map((opt) => {
-    let new_option = document.createElement("option")
-    new_option.text = opt
-    new_option.value = opt
-    mktDropdown.add(new_option)
-})
+let langDropdown = document.getElementById("lang-lvl");
+langOpt.map((opt, idx) => {
+    let new_option = document.createElement("option");
+    new_option.text = opt;
+    new_option.value = langOptDB[idx];
+    langDropdown.add(new_option);
+});
+
+let mktDropdown = document.getElementById("mkt-action");
+mktOpt.map((opt, idx) => {
+    let new_option = document.createElement("option");
+    new_option.text = opt;
+    new_option.value = mktOptDB[idx];
+    mktDropdown.add(new_option);
+});
 
 function handleSubmit(event) {
   // Overwrites the submit function of the button to convert formData into JSON before sending to server
   event.preventDefault();
-  const checkboxes = ["reason-exp", "reason-network", "reason-social"]
+  const checkboxes = ["reason-exp", "reason-network", "reason-social"];
   const data = new FormData(event.target);
-  let value = Object.fromEntries(data.entries())
-  value.topics = data.getAll("topics")
-  value.dataSecurity = Boolean(value.dataSecurity).toString()
-  value.contactAllowed = Boolean(value.contactAllowed).toString()
+  let value = Object.fromEntries(data.entries());
+  value.topics = data.getAll("topics");
+  value.dataSecurity = Boolean(value.dataSecurity).toString();
+  value.contactAllowed = Boolean(value.contactAllowed).toString();
   
-  value.motivation = []
+  value.motivation = [];
   checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
-  [...checkboxes, "topics"].forEach(n => delete value[n])
+  [...checkboxes, "topics"].forEach(n => delete value[n]);
 
   fetch('http://localhost:8000/applicants/new', {
     method: 'POST',
@@ -109,7 +175,7 @@ function handleSubmit(event) {
     },
     body: JSON.stringify(value)
   })
-  .then(response => response.json())
+  .then(response => response.json());
 }
 
 const form = document.querySelector('form');
