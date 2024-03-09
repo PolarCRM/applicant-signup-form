@@ -36,7 +36,6 @@ const LCs = [
 
 const LcDB = [
   "aachen",
-  "augsburg",
   "berlin-hu",
   "berlin-tu",
   "bielefeld",
@@ -44,11 +43,9 @@ const LcDB = [
   "bonn",
   "braunschweig",
   "bremen",
-  "darmstadt",
   "dresden",
   "duesseldorf",
   "frankfurt-main",
-  "giessen-marburg",
   "goettingen",
   "halle",
   "hamburg",
@@ -59,15 +56,15 @@ const LcDB = [
   "leipzig",
   "lueneburg",
   "magdeburg",
-  "mainz-wiesbaden",
-  "mannheim-heidelberg",
+  "mainz",
+  "mannheim",
   "muenchen",
   "muenster",
   "nuernberg",
   "paderborn",
   "passau",
   "regensburg",
-  "stuttgart-hohenheim"
+  "stuttgart"
 ];
 
 const langOpt = [
