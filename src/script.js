@@ -1,6 +1,5 @@
 const LCs = [
     "Aachen",
-    "Augsburg",
     "Berlin HU",
     "Berlin TU",
     "Bielefeld",
@@ -8,11 +7,9 @@ const LCs = [
     "Bonn",
     "Braunschweig",
     "Bremen",
-    "Darmstadt",
     "Dresden",
     "Düsseldorf",
     "Frankfurt am Main",
-    "Gießen-Marburg",
     "Göttingen",
     "Halle",
     "Hamburg",
