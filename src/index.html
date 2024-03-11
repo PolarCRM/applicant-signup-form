@@ -57,63 +57,97 @@
                         </label>
                     </div>
 
-                    <div>
+                    <div class="next-flex">
 
-                        <label class="question-label">Auf welchem Niveau sprichst du Deutsch? *
-                            <select name="german" id="lang-lvl" required>
-                                <option value="">Bitte wähle eine Option aus</option>
-                            </select>
+                        <div>
+
+                            <label class="question-label">Auf welchem Niveau sprichst du Deutsch? *
+                                <select name="german" id="lang-lvl" required>
+                                    <option value="">Bitte wähle eine Option aus</option>
+                                </select>
+                                </label>
+    
+                        </div>
+
+                        <div>
+
+                            <label class="question-label">
+                                Wie bist du auf AIESEC aufmerksam geworden? *
+                                <select name="mktChannel" id="mkt-action" required>
+                                    <option value="">Bitte wähle eine Option aus</option>
+                                </select>
                             </label>
+    
+                        </div>
 
                     </div>
 
                    
 
-                    <label class="question-label">
-                        Wie bist du auf AIESEC aufmerksam geworden? *
-                        <select name="mktChannel" id="mkt-action" required>
-                            <option value="">Bitte wähle eine Option aus</option>
-                        </select>
-                    </label>
 
-                    <label class="question-label">
-                        Was ist deine Motivation, dich bei AIESEC zu engagieren?
-                    </label>
 
-                    <label class="checkbox-label"><input type="checkbox" name="reason-exp" value="true" class="inline"/>Persönliche und berufliche Entwicklung</label>
-                    <label class="checkbox-label"><input type="checkbox" name="reason-network" value="true" class="inline"/>Internationales Netzwerk</label>
-                    <label class="checkbox-label"><input type="checkbox" name="reason-social" value="true" class="inline"/>Beitrag zur interkulturellen Verständigung</label>
+                    <div>
+                        <label class="question-label">
+                            Was ist deine Motivation, dich bei AIESEC zu engagieren?
+                        </label>
 
-                    <label class="question-label">Datenschutz *</label>
-                    <label class="checkbox-label"><input type="checkbox" name="dataSecurity" value="true" class="inline" required/>
-                        Ich stimme den Datenschutzbestimmungen von AIESEC,
-                        abrufbar unter&nbsp;
-                        <a
-                            class="app-link"
-                            href="https://www.aiesec.de/datenschutz"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            www.aiesec.de/datenschutz
-                        </a>
-                        &nbsp;zu.
-                    </label>
+                    </div>
 
-                    <label class="question-label">Einwilligung zur Kontaktaufnahme *</label>
-                    <label class="checkbox-label">
-                        <input class="inline" type="checkbox" value="true" name="contactAllowed" required/>
-                        AIESEC darf mich zum Zwecke meiner Bewerbung telefonisch,
-                        via Messenger oder per E-Mail kontaktieren.
-                    </label>
+                    <div class="next-flex">
 
-                    <label class="question-label">Falls du ein LinkedIn Profil hast, gib uns gerne den Link:</label>
-                    <input type="text" name="linkedin"/>
 
-                    <p class="question-label">oder</p>
+                          <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-exp" value="true" class="inline"/>Persönliche und berufliche Entwicklung</label>
+                         </div>
+                         <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-network" value="true" class="inline"/>Internationales Netzwerk</label>
+                        </div>
+                          
+                        <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-social" value="true" class="inline"/>Beitrag zur interkulturellen Verständigung</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="question-label"></label>
+                        <label class="checkbox-label"><input type="checkbox" name="dataSecurity" value="true" class="inline" required/>
+                            Ich stimme den Datenschutzbestimmungen von AIESEC,
+                            abrufbar unter&nbsp;
+                            <a
+                                class="app-link"
+                                href="https://www.aiesec.de/datenschutz"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                www.aiesec.de/datenschutz
+                            </a>
+                            &nbsp;zu.
+                        </label>
+
+                    </div>
+                   
+                    <div>
+                        <label class="question-label"></label>
+                        <label class="checkbox-label">
+                            <input class="inline" type="checkbox" value="true" name="contactAllowed" required/>
+                            AIESEC darf mich zum Zwecke meiner Bewerbung telefonisch,
+                            via Messenger oder per E-Mail kontaktieren.
+                        </label>
+
+                    </div>
+
+                    <div>
+                        <label class="question-label">Falls du ein LinkedIn Profil hast, gib uns gerne den Link:</label>
+                        <input type="text" name="linkedin"/>
+
+                    </div>
+
+
+                  <!--  <p class="question-label">oder</p>
 
                     <label class="question-label">Lade einen Lebenslauf hoch</label>
-                    <input type="file" name="file"/>
+                    <input type="file" name="file"/> -->
 
-                    <input type="submit" value="Senden" onclick="window.location.href = 'https://google.com';"/>
+                    <input  type="submit" value="Senden" onclick="window.location.href = 'https://google.com';"/>
                 </fieldset>
             </form>
         </header>
