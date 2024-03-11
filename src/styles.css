@@ -31,7 +31,12 @@ div {
   width: 100%;
 }
 
-
+:root {
+  --arrow-bg: #52565e;
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg:#52565e;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
 select {
   /* Reset */
   appearance: none;
