@@ -45,8 +45,8 @@ select {
   outline: 0;
   font: inherit;
   /* Personalize */
-  width: 10rem;
-  padding: 1rem 4rem 1rem 1rem;
+  width: 100%;
+  padding: 1rem 5rem 1rem 1rem;
   background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
     linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
   color: #52565e;
@@ -65,8 +65,7 @@ select {
   /* <option> colors */
   option {
     color: inherit;
-    background-color: var(--option-bg);
-  }
+    background-color: var(--option-bg);  }
 }
 
 fieldset {
@@ -78,4 +77,14 @@ fieldset {
   max-width: 500px;
   background-color: #f4f4f4;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.box-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
