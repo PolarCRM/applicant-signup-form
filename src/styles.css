@@ -16,8 +16,6 @@ form {
   padding: 0px;
   border: 0px solid #ccc;
   border-radius: 10px;
-  background-color: #f4f4f4;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   width: 70%;
   max-width: 500px;
   font-family: lato;
@@ -74,7 +72,7 @@ fieldset {
   margin: 10px;
   padding-left: 3px;
   width: 100%;
-  /* max-width: 500px; */
+  max-width: 500px;
   background-color: #f4f4f4;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
