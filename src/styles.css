@@ -110,3 +110,21 @@ background-size: 100%;
   align-items: center;
   min-height: 10vh;
 }
+
+.info-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
+  border: 0px solid #ccc;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 600px;
+  font-family: lato;
+  color: #ffffff;
+  margin-left: 10%;
+
+}
