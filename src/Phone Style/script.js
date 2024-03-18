@@ -162,7 +162,7 @@ function handleSubmit(event) {
   checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
   [...checkboxes, "topics"].forEach(n => delete value[n]);
 
-  fetch('https://polarcrm-backend.onrender.com/applicants/new', {
+  fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
