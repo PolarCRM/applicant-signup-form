@@ -167,13 +167,30 @@ function handleSubmit(event) {
     return;
     }
 
-  fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
-    method: 'POST',
-    headers: {
+    fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
+      method: 'POST',
+      headers: {
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(value)
-  })
+      },
+      body: JSON.stringify(value)
+      })
+      .then(response => response.json())
+      .then(data => {
+      // Handle response data
+      alert(data);
+      })
+      .catch(error => {
+
+      alert('Error:', error);
+      });
+
+  // fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(value)
+  // })
   .then(response => response.json());
 }
 
