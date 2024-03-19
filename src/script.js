@@ -1,3 +1,7 @@
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
 const LCs = [
   "Aachen",
   "Berlin HU",
