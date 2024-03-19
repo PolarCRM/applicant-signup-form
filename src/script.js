@@ -163,6 +163,8 @@ value.motivation = [];
 checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
 [...checkboxes, "topics"].forEach(n => delete value[n]);
 
+console.log(value);
+
 fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
   method: 'POST',
   headers: {
@@ -170,7 +172,18 @@ fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
   },
   body: JSON.stringify(value)
 })
-.then(response => response.json());
+.then(res => {
+  if(!res.ok) {
+    console.log(res)
+    alert(res.statusText, res.status)
+  }
+  return res.json();
+})
+// .then(res => alert(res.message._id))
+.catch(err => {
+  alert(err.message)
+  console.log(err);
+})
 }
 
 const form = document.querySelector('form');
