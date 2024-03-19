@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles.css"/>
+    </head>
+    <body>
+        <header className="App-header">
+            <form action="http://localhost:8000/applicants/new" method="post" enctype="application/x-www-form-urlencoded">
+                <fieldset>
+                    <div class="next-flex">
+                            <!-- <a href="Phone Style/form-phone.html"> check phone </a> -->
+                        <div>
+                            <label class="question-label">Vorname * <br> <input class="box-input" type="text" name="firstName" required/></label>
+
+                        </div>
+                        <div>
+                            <label class="question-label">Nachname * <br> <input class="box-input" type="text" name="familyName" required/></label>                        
+                        </div>
+                    </div>
+
+
+                    <div class="next-flex">
+
+                        <div>
+                        
+                            <label class="question-label">Email * <br> <input class="box-input" type="email" name="email" required/></label>
+                        
+                         </div>
+
+
+                        <div>
+  
+                            <label class="question-label">Telefonnummer * <br> <input class="box-input" type="text" name="telephone" required/></label>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div>
+                        <label class="question-label">
+                            <select name="lc" id="lc" required>
+                                <option value="">Lokalkomitee in deiner Nähe *</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+
+                    <div>
+                        <label class="question-label">
+                            Was machst du derzeit?
+                            Falls du Student bist, an welcher Hochschule studierst du?
+                            Wie heißt dein Studiengang? *
+                            <input class="box-input" type="text" name="occupation" required/>
+                        </label>
+                    </div>
+
+                    <div class="next-flex">
+
+                        <div>
+
+                            <label class="question-label">Auf welchem Niveau sprichst du Deutsch? *
+                                <select name="german" id="lang-lvl" required>
+                                    <option value="">Bitte wähle eine Option aus</option>
+                                </select>
+                                </label>
+    
+                        </div>
+
+                        <div>
+
+                            <label class="question-label">
+                                Wie bist du auf AIESEC aufmerksam geworden? *
+                                <select name="mktChannel" id="mkt-action" required>
+                                    <option value="">Bitte wähle eine Option aus</option>
+                                </select>
+                            </label>
+    
+                        </div>
+
+                    </div>
+
+                   
+
+
+
+                    <div>
+                        <label class="question-label">
+                            Was ist deine Motivation, dich bei AIESEC zu engagieren?
+                        </label>
+
+                    </div>
+
+                    <div class="next-flex">
+
+
+                          <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-exp" value="true" class="inline"/>Persönliche und berufliche Entwicklung</label>
+                         </div>
+                         <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-network" value="true" class="inline"/>Internationales Netzwerk</label>
+                        </div>
+                          
+                        <div>
+                            <label class="checkbox-label"><input type="checkbox" name="reason-social" value="true" class="inline"/>Beitrag zur interkulturellen Verständigung</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="question-label"></label>
+                        <label class="checkbox-label"><input type="checkbox" name="dataSecurity" value="true" class="inline" required/>
+                            Ich stimme den Datenschutzbestimmungen von AIESEC,
+                            abrufbar unter&nbsp;
+                            <a
+                                class="app-link"
+                                href="https://www.aiesec.de/datenschutz"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                www.aiesec.de/datenschutz
+                            </a>
+                            &nbsp;zu.
+                        </label>
+
+                    </div>
+                   
+                    <div>
+                        <label class="question-label"></label>
+                        <label class="checkbox-label">
+                            <input class="inline" type="checkbox" value="true" name="contactAllowed" required/>
+                            AIESEC darf mich zum Zwecke meiner Bewerbung telefonisch,
+                            via Messenger oder per E-Mail kontaktieren.
+                        </label>
+
+                    </div>
+
+                    <div>
+                        <label class="question-label">Falls du ein LinkedIn Profil hast, gib uns gerne den Link:</label>
+                        <input class="box-input" type="text" name="linkedin"/>
+
+                    </div>
+
+
+                  <!--  <p class="question-label">oder</p>
+
+                    <label class="question-label">Lade einen Lebenslauf hoch</label>
+                    <input type="file" name="file"/> -->
+
+                    <input  type="submit" value="Senden" onclick="window.location.href = 'https://aiesec.de/mitgliedschaft-registrierung-erfolgreich';"/>
+                </fieldset>
+            </form>
+        </header>
+        <script src="script.js"></script>
+    </body>
+</html>
