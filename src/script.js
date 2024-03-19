@@ -173,7 +173,4 @@ function handleSubmit(event) {
 }
 
 const form = document.querySelector('form');
-// create touch and click event listeners for the form
-var eventNames = ['click', 'touchstart'];
-for (var i = 0; i < eventNames.length; i++) {
-form.addEventListener(eventNames[i], handleSubmit);
+form.addEventListener('submit', handleSubmit);
