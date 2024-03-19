@@ -162,6 +162,11 @@ function handleSubmit(event) {
   checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
   [...checkboxes, "topics"].forEach(n => delete value[n]);
 
+  if (!window.fetch) {
+    alert("Your browser doesn't support the fetch API.");
+    return;
+    }
+
   fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
     method: 'POST',
     headers: {
