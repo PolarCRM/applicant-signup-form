@@ -162,27 +162,22 @@ function handleSubmit(event) {
   checkboxes.forEach(cb => value.motivation.push(Boolean(value[cb]).toString()));
   [...checkboxes, "topics"].forEach(n => delete value[n]);
 
-  if (!window.fetch) {
-    alert("Your browser doesn't support the fetch API.");
-    return;
-    }
+  fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json'
+},
+body: JSON.stringify(value)
+})
+.then(response => response.json())
+.then(data => {
+// Handle response data
+alert(data);
+})
+.catch(error => {
 
-    fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(value)
-      })
-      .then(response => response.json())
-      .then(data => {
-      // Handle response data
-      alert(data);
-      })
-      .catch(error => {
-
-      alert('Error:', error);
-      });
+alert('Error:', error);
+});
 
   // fetch('https://polarcrm-backend-bdek.onrender.com/applicants/new', {
   //   method: 'POST',
@@ -191,7 +186,7 @@ function handleSubmit(event) {
   //   },
   //   body: JSON.stringify(value)
   // })
-  .then(response => response.json());
+  // .then(response => response.json());
 }
 
 const form = document.querySelector('form');
